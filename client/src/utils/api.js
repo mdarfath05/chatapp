@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  const api = axios.create({
   baseURL: process.env.REACT_APP_SERVER_URL
     ? `${process.env.REACT_APP_SERVER_URL}/api`
     : '/api',
   headers: { 'Content-Type': 'application/json' },
+  withCredentials: true,
 });
 
 api.interceptors.request.use((config) => {
